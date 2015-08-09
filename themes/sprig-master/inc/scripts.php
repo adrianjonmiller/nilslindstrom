@@ -13,8 +13,6 @@ function sprig_scripts() {
 		'vendor-js'       => '/dist/js/vendor.js',
 		'js'              => '/dist/js/main.js'
 	);
-
-	wp_enqueue_style('sprig_vendor_css', get_template_directory_uri() . $assets['vendor-css'], false, null);
 	wp_enqueue_style('sprig_css', get_template_directory_uri() . $assets['css'], false, null);
 	wp_enqueue_script('sprig_vendor_js', get_template_directory_uri() . $assets['vendor-js'], array(), null, true);
 	wp_enqueue_script('sprig_js', get_template_directory_uri() . $assets['js'], array(), null, true);
