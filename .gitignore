@@ -1,0 +1,5 @@
+.DS_Store
+themes/sprig-master/.sass-cache/
+themes/sprig-master/node_modules/
+themes/sprig-master/inc/Twig/twig_cache/
+themes/sprig-master/vendor/
