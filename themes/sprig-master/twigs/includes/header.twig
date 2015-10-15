@@ -1,0 +1,25 @@
+<header>
+	<div class="container">
+		<div class="text-center">
+			<a class="navbar-brand" href="{{ wp.home_url() }}">
+				<img alt="{{ wp.bloginfo('name') }}" src="/wp-content/themes/sprig-master/img/logo.svg" alt="">
+			</a>
+		</div>
+	</div>
+  <div class="container">
+		<nav class="collapse navbar-collapse" role="navigation">
+			{% if wp.has_nav_menu('primary_navigation') %}
+				<div class="collapse navbar-collapse">
+					{{ wp.wp_nav_menu({
+						'theme_location':'primary_navigation',
+						'menu_class':'primary-menu',
+						'walker': wp.returnObject('wp_bootstrap_navwalker'),
+						'container':false,
+						'depth':2,
+						'fallback_cb':'wp_bootstrap_navwalker::fallback'
+					}) }}
+				</div>
+			{% endif %}
+		</nav>
+  </div>
+</header>
