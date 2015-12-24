@@ -1,11 +1,34 @@
-{% extends 'layouts/base.twig' %}
+{% include('includes/head.twig') %}
 
-{% block content %}
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
-            {% for post in posts() %}{{ the_post(post) }}
-                {% include 'content/content-page.twig' %}
-            {% endfor %}
-        </main><!-- #main -->
-    </div><!-- #primary -->
-{% endblock %}
+<body {{ wp.body_class }} >
+
+  {% include('includes/header.twig') %}
+
+  {% for post in posts() %} {{ the_post() }}
+    {{ wp.the_title }}
+	{% endfor %}
+
+  <div class="wrap container" role="document">
+    <div class="content">
+    	{% for post in posts({
+
+    	}) %}
+			    {% block post %}
+			        <h1>{{ post.title }}</h1>
+			        <p>{{ post.body }}</p>
+			    {% endblock %}
+			{% endfor %}
+			<div class="card">
+				<h1 class="heading--lg text-center">
+					Design is not about self expression; <br>
+					it’s about the message. It’s about the clarity of that message<br>
+					to its intended audience. 
+				</h1>
+			</div>
+
+  	{% include('includes/footer.twig') %}
+
+  	{{ wp.wp_footer }}
+
+	</body>
+</html>
