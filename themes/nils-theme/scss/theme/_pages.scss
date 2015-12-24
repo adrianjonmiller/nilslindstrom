@@ -1,0 +1,14 @@
+.page, .single {
+  .header-nav {
+    background: url('img/bottom_shadow.svg') no-repeat center top;
+    margin-bottom: 50px;
+  }
+
+  &.home {
+    .header-nav {
+      background: url('img/design_bkgnd.svg') no-repeat center top;
+      background-size: 100% auto;
+      height: 340px;
+    }
+  }
+}

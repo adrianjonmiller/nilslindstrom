@@ -1,0 +1,51 @@
+.block {
+  padding: 1rem;
+  position: relative;
+  margin: 40px 0;
+
+  &:after, &:before {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    display: block;
+    height: 38px;
+  }
+
+  &:after {
+    content: url(img/top_shadow.svg);
+  }
+
+  &:before {
+    bottom: auto;
+    top: 100%;
+    content: url(img/bottom_shadow.svg);
+  }
+
+  + .block {
+    margin-top: 200px;
+  }
+
+  &.gray {
+    background: #E6E6E6;
+  }
+
+  &.padded {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.bottom-bar {
+  margin-left: -1rem;
+  display: flex;
+
+  .widget {
+    width: 50%;
+    margin-left: 1rem;
+  }
+}
+
+.top-bar {
+  margin: 100px 0;
+}
