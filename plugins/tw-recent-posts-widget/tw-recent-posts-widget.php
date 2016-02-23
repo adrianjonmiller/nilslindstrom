@@ -5,7 +5,7 @@ Plugin URI: http://vuckovic.biz/wordpress-plugins/tw-recent-posts-widget
 Description: TW Recent Posts Widget is advanced version of the WordPress Recent Posts widget allowing increased customization to display recent posts from category you define.
 Author: Igor Vučković
 Author URI: http://vuckovic.biz
-Version: 1.0.4
+Version: 1.0.5
 */
 
 //	Set the wp-content and plugin urls/paths
@@ -25,7 +25,7 @@ class TW_Recent_Posts extends WP_Widget
 {
 
     //	@var string(The plugin version)
-    var $version = '1.0.4';
+    var $version = '1.0.5';
     //	@var string(Domain used for localization)
     var $localization_domain = 'tw-recent-posts';
     //	@var string(The url to this plugin)
@@ -45,7 +45,8 @@ class TW_Recent_Posts extends WP_Widget
         add_action('wp_print_styles', array(&$this, 'tw_recent_posts_css'));
 
         $widget_ops = array('classname' => 'tw-recent-posts', 'description' => __('Show recent posts from selected category. Includes advanced options.', $this->localization_domain));
-        $this->WP_Widget('tw-recent-posts', __('TW Recent Posts ', $this->localization_domain), $widget_ops);
+
+        parent::__construct('tw-recent-posts', __('TW Recent Posts ', $this->localization_domain), $widget_ops);
     }
 
     /**
@@ -54,7 +55,7 @@ class TW_Recent_Posts extends WP_Widget
     public function tw_recent_posts_css()
     {
         $name = "tw-recent-posts-widget.css";
-        if(false !== file_exists(TEMPLATEPATH . "/$name")) {
+        if (false !== file_exists(TEMPLATEPATH . "/$name")) {
             $css = get_template_directory_uri() . "/$name";
         } else {
             $css = $this->plugin_url . $name;
@@ -239,7 +240,7 @@ wp_reset_postdata();
 	name="<?php echo $this->get_field_name('category'); ?>">
 	<?php
 	echo '<option value="0" ' .('0' == $category ? 'selected="selected"' : ''). '>'. __('All categories', $this->localization_domain).'</option>';
-	$cats = get_categories(array('hide_empty' => 0, 'name' => 'category', 'hierarchical' => true));
+	$cats = get_categories(array('hide_empty' => 0, 'taxonomy' => 'category', 'hierarchical' => 1));
 	foreach($cats as $cat) {
 		echo '<option value="' . $cat->term_id . '" ' .($cat->term_id == $category ? 'selected="selected"' : ''). '>' . $cat->name . '</option>';
 	} ?>
@@ -316,5 +317,6 @@ wp_reset_postdata();
 
 } // end class TW_Recent_Posts
 
-add_action('widgets_init', create_function('', 'return register_widget("TW_Recent_Posts");'));
-?>
+add_action('widgets_init', function () {
+    register_widget('TW_Recent_Posts');
+});
