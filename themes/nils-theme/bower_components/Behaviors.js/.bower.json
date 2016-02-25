@@ -1,5 +1,6 @@
 {
   "name": "Behaviors.js",
+  "version": "1.0.0",
   "authors": [
     "Adrian Miller <adrianjonmiller@gmail.com>"
   ],
@@ -20,14 +21,13 @@
     "jquery": "~2.1.3"
   },
   "homepage": "https://github.com/adrianjonmiller/behaviors.js",
-  "_release": "39c94258cd",
+  "_release": "1.0.0",
   "_resolution": {
-    "type": "branch",
-    "branch": "master",
-    "commit": "39c94258cdece7324892cb0bccaa69ac0806a3a7"
+    "type": "version",
+    "tag": "1.0.0",
+    "commit": "3ac50ffd23067e169bba111b86d4e8434ae6ae67"
   },
   "_source": "git@github.com:adrianjonmiller/behaviors.js.git",
   "_target": "*",
-  "_originalSource": "git@github.com:adrianjonmiller/behaviors.js.git",
-  "_direct": true
+  "_originalSource": "git@github.com:adrianjonmiller/behaviors.js.git"
 }

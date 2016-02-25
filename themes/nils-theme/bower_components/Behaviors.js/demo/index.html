@@ -9,14 +9,18 @@
 
 		<link rel="apple-touch-icon" href="apple-touch-icon.png">
 		<!-- Place favicon.ico in the root directory -->
-
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script src="/js/behaviors.js"></script>
-		<script src="/js/scripts.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.js"></script>
+		<script src="js/watch.ployfill.js"></script>
+		<script src="js/behaviors.js"></script>
+		<script src="js/scripts.js"></script>
 
 	</head>
-	<body data-debug="true">
+	<body data-behavior="event">
 		<p data-behavior="test"></p>
-		
+		<p data-view="test"></p>
+		<button data-behavior="change">Change</button>
+		<button data-behavior="changeAgain">Change Again</button>
+		<button data-behavior="changeTotal">Change Again</button>
 	</body>
 </html>

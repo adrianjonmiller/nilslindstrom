@@ -1,0 +1,25 @@
+{
+  "name": "behaviors.js",
+  "version": "1.0.0",
+  "description": "Behaviors JS ==============",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrianjonmiller/behaviors.js.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "Adrian Miller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adrianjonmiller/behaviors.js/issues"
+  },
+  "homepage": "https://github.com/adrianjonmiller/behaviors.js#readme",
+  "dependencies": {
+    "mustache": "^2.2.1"
+  }
+}

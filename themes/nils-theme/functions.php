@@ -10,6 +10,17 @@ if ( ! class_exists( 'Timber' ) ) {
 	return;
 }
 
+//Making jQuery to load from Google Library
+function replace_jquery() {
+	if (!is_admin()) {
+		// comment out the next two lines to load the local copy of jQuery
+		wp_deregister_script('jquery');
+		wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js', false, '1.11.3');
+		wp_enqueue_script('jquery');
+	}
+}
+add_action('init', 'replace_jquery');
+
 // Base template route
 $template_base = 'templates';
 
@@ -103,8 +114,8 @@ class StarterSite extends TimberSite {
 	}
 
 	function loadScripts() {
-    wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/example.js', array(), '1.0.0', true );
-
+    wp_enqueue_script( 'behaviors', get_template_directory_uri() . '/bower_components/Behaviors.js/src/behaviors.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'site', get_template_directory_uri() . '/static/js/site.js', array(), '1.0.0', true );
   }
 
 	function widgets() {

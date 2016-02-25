@@ -1,5 +1,5 @@
 .block {
-  padding: 1rem;
+  padding: 1rem 3rem;
   position: relative;
   margin: 40px 0;
 
@@ -48,4 +48,55 @@
 
 .top-bar {
   margin: 100px 0;
+}
+
+.thumbnails {
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+
+  .thumbnails-image {
+    flex: 1 0 auto;
+
+    img {
+      height: 120px;
+    }
+
+    + .thumbnails-image {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.scrollbar {
+  .scrollbar-right,
+  .scrollbar-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    color: #fff;
+    width: 2.5rem;
+    padding: 0;
+    outline: none;
+    text-align: center;
+
+    &:before {
+      background-color: gray;
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      font-size: 14pt;
+      border-radius: 999em;
+      line-height: 2rem;
+    }
+  }
+
+  .scrollbar-right {
+    margin-top: 0;
+    left: auto;
+    right: 0;
+  }
 }
