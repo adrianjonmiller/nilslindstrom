@@ -21,6 +21,7 @@ html, body {
   margin: 0;
   min-height: 100%;
   position: relative;
+  line-height: 1.5rem;
 }
 
 body > footer {
@@ -28,6 +29,11 @@ body > footer {
   position: absolute;
   bottom: 0;
   left: 0;
+  width: 100%;
+}
+
+iframe {
+  max-width: 100%;
   width: 100%;
 }
 
@@ -82,5 +88,17 @@ a {
     &:after {
       display: none;
     }
+  }
+}
+
+p {
+  line-height: 2rem;
+
+  a,
+  span,
+  strong,
+  i,
+  b, {
+    margin-top: 0;
   }
 }

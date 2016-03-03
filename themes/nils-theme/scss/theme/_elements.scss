@@ -46,6 +46,17 @@
   }
 }
 
+.widget-title {
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-size: 12pt;
+}
+
+.rpwe-title > a {
+  font-weight: 700;
+  font-size: 11pt;
+}
+
 .top-bar {
   margin: 100px 0;
 }
@@ -53,6 +64,10 @@
 .thumbnails {
   flex-wrap: nowrap;
   overflow-x: scroll;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   .thumbnails-image {
     flex: 1 0 auto;
@@ -83,6 +98,10 @@
     outline: none;
     text-align: center;
 
+    &.is-disabled {
+      opacity: .3;
+    }
+
     &:before {
       background-color: gray;
       display: inline-block;
@@ -99,4 +118,8 @@
     left: auto;
     right: 0;
   }
+}
+
+.post {
+  margin: 12rem 0;
 }

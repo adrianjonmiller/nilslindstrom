@@ -34,10 +34,25 @@ html {
   margin-left: -1rem;
 
   > div {
+    width: 100%;
     max-width: 100vw;
     flex: 1 1 auto;
     margin-left: 1rem;
     margin-top: 0;
+
+    &.col-2-3 {
+      flex: 0 1 auto;
+      max-width: calc(#{percentage(2/3)} - 1rem) !important;
+      margin-left: 1rem;
+      margin-top: 0;
+    }
+
+    &.col-1-3 {
+      flex: 0 1 auto;
+      max-width: calc(#{percentage(1/3)} - 1rem) !important;
+      margin-left: 1rem;
+      margin-top: 0;
+    }
   }
 
   > div:first-child:nth-last-child(2) ~ div, > div:first-child:nth-last-child(2) {

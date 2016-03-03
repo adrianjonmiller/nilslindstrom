@@ -1,0 +1,18 @@
+.gallery {
+  .gallery-image {
+    transition: box-shadow .5s;
+    &:hover,
+    &.is-current {
+      box-shadow: 0 2px 3px rgba(black, 0.4);
+    }
+  }
+
+  .gallery-main {
+    height: 400px;
+    > img {
+      display: block;
+      max-height: 100%;
+      margin: 0 auto;
+    }
+  }
+}

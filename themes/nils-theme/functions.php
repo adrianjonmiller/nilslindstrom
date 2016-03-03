@@ -116,6 +116,7 @@ class StarterSite extends TimberSite {
 	function loadScripts() {
     wp_enqueue_script( 'behaviors', get_template_directory_uri() . '/bower_components/Behaviors.js/src/behaviors.js', array(), '1.0.0', true );
     wp_enqueue_script( 'site', get_template_directory_uri() . '/static/js/site.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'slick', '//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js', array(), '1.0.0', true );
   }
 
 	function widgets() {

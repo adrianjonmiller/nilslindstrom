@@ -1,28 +1,52 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	{% if sidebar_2 %}
-		<div class="top-bar">
-			<aside class="block gray">
-				{{ sidebar_2 }}
-			</aside>
-		</div>
-	{% endif %}
-	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+	<div class="scrollbar block gray" data-behavior="scrollbar">
+		<button type="button" name="button" class="scrollbar-left ion-chevron-left js-left"></button>
+		<ul class="thumbnails unstyle flexbox js-slider">
+			{% for post in related %}
+				<li class="thumbnails-image">
+					<a href="{{post.link}}">
+						{% if post.thumbnail.src %}
+							<img src="{{post.thumbnail.src}}" />
+						{% endif %}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+		<button type="button" name="button" class="scrollbar-right ion-chevron-right js-right"></button>
+	</div>
+
+	<article class="{{post.post_type}}" id="post-{{post.ID}}">
 		<div class="measure">
-			{% if post.thumbnail.src %}
-				<div class="">
-					<img src="{{post.thumbnail.src}}" />
+			{% if video %}
+			<div class="col-2-3">
+				{{ video }}
+			</div>
+			{% elseif post.thumbnail.src %}
+				<div class="col-2-3">
+					<div class="gallery" data-behavior="gallery">
+						<div class="gallery-main js-gallery-main">
+							<img class="js-large" src="{{ post.thumbnail.src }}"  />
+						</div>
+						{% if images|length > 0 %}
+							<img class="gallery-image is-current" src="{{ post.thumbnail.src('thumbnail') }}" data-large="{{post.thumbnail.src}}"  />
+							{% for image in images %}
+								<img class="gallery-image" src="{{ image.thumb }}" data-large="{{image.full}}"/>
+							{% endfor %}
+						{% endif %}
+					</div>
 				</div>
 			{% endif %}
-
-			<div class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
-				<p class="blog-author">
-					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.post_date|date}}
-				</p>
-				<div class="article-body">
-					{{post.content}}
+			<div class="col-1-3">
+				<div class="article-content">
+					<h1 class="heading--xl">{{post.title}}</h1>
+					<p class="blog-author">
+						<span>By</span> <a href="{{post.author.path}}"> {{ post.author.name }} </a> <span>&bull;</span> {{ post.post_date|date}}
+					</p>
+					<div class="article-body">
+						{{post.content}}
+					</div>
 				</div>
 			</div>
 		</div>

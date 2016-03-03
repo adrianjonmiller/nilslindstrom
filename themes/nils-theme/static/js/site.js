@@ -35,6 +35,32 @@ jQuery( document ).ready( function( $ ) {
           offset = offset + $container.width();
         }
       }
+    });
+  }
+
+  Js.Behaviors.gallery = function(container) {
+    var $container = $(container);
+    var $main = $($container.find('.js-gallery-main'));
+
+    $(container).on('click', '[data-large]', function(e){
+      var $target = $(e.target),
+      image = new Image();
+      $image = $(image);
+
+      $image.css('opacity', 0);
+      $image.addClass('js-large');
+      image.src = $target.attr('data-large');;
+
+      $(image).on('load', function(){
+        $main.find('.js-large').remove();
+        var $this = $(this);
+        $main.prepend($this);
+        $this.animate({
+          opacity: 1,
+        }, 750);
+      });
+      $container.find('.is-current').removeClass('is-current');
+      $target.addClass('is-current');
     })
   }
 });

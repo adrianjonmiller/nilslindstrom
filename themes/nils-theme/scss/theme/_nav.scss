@@ -62,25 +62,49 @@
 
   &.print {
     background-image: url(img/bt_print.svg);
+
+    .print & {
+      background-color: #00FF00;
+    }
   }
 
   &.custom-type {
     background-image: url(img/bt_type.svg);
+
+    .fonts & {
+      background-color: #00FF00;
+    }
   }
 
   &.packaging {
     background-image: url(img/bt_packaging.svg);
+
+    .packaging & {
+      background-color: #00FF00;
+    }
   }
 
   &.motion-graphics {
     background-image: url(img/bt_motion.svg);
+
+    .motion-graphics & {
+      background-color: #00FF00;
+    }
   }
 
   &.web-design {
     background-image: url(img/bt_web.svg);
+
+    .web-design & {
+      background-color: #00FF00;
+    }
   }
 
   &.branding {
     background-image: url(img/bt_branding.svg);
+
+    .branding & {
+      background-color: #00FF00;
+    }
   }
 }

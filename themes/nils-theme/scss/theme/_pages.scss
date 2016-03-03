@@ -1,4 +1,6 @@
-.page, .single {
+.page,
+.single,
+.archive {
   .header-nav {
     background: url('img/bottom_shadow.svg') no-repeat center top;
     margin-bottom: 50px;
@@ -10,5 +12,12 @@
       background-size: 100% auto;
       height: 340px;
     }
+  }
+}
+
+.archive {
+  .archive-description {
+    max-width: 500px;
+    margin: 4rem auto 8rem;
   }
 }
