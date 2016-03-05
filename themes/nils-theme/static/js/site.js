@@ -7,38 +7,36 @@ jQuery( document ).ready( function( $ ) {
     var itemsWidth = 0;
 
     $(window).on('load', function(){
-      console.log('success');
       $.each($container.children(), function(index, item){
         itemsWidth = itemsWidth + $(item).width();
       });
-    });
 
+      $this.on('click', function(e){
+        var target = e.target;
+        console.log(itemsWidth);
 
-    $this.on('click', function(e){
-      var target = e.target;
-      console.log(itemsWidth);
-
-      if($(e.target).hasClass('js-left')) {
-        if(offset > 0) {
-          $container.animate(
-            {
-              scrollLeft: offset - $container.width()
-            },
-          500);
-          offset = offset - $container.width();
+        if($(e.target).hasClass('js-left')) {
+          if(offset > 0) {
+            $container.animate(
+              {
+                scrollLeft: offset - $container.width()
+              },
+            500);
+            offset = offset - $container.width();
+          }
         }
-      }
 
-      if($(e.target).hasClass('js-right')) {
-        if(offset < itemsWidth) {
-          $container.animate(
-            {
-              scrollLeft: offset + $container.width()
-            },
-          500);
-          offset = offset + $container.width();
+        if($(e.target).hasClass('js-right')) {
+          if(offset < itemsWidth) {
+            $container.animate(
+              {
+                scrollLeft: offset + $container.width()
+              },
+            500);
+            offset = offset + $container.width();
+          }
         }
-      }
+      });
     });
   }
 
