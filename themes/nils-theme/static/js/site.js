@@ -6,9 +6,13 @@ jQuery( document ).ready( function( $ ) {
     var offset = 0;
     var itemsWidth = 0;
 
-    $.each($container.children(), function(index, item){
-      itemsWidth = itemsWidth + $(item).width();
+    $(window).on('load', function(){
+      console.log('success');
+      $.each($container.children(), function(index, item){
+        itemsWidth = itemsWidth + $(item).width();
+      });
     });
+
 
     $this.on('click', function(e){
       var target = e.target;
