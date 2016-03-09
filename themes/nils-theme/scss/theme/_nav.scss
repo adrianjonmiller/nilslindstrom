@@ -107,4 +107,12 @@
       background-color: #00FF00;
     }
   }
+
+  &.lettering {
+    background-image: url(img/lettering.svg);
+
+    .lettering & {
+      background-color: #00FF00;
+    }
+  }
 }

@@ -63,18 +63,13 @@
 
 .thumbnails {
   flex-wrap: nowrap;
-  overflow-x: scroll;
-  
+
   &::-webkit-scrollbar {
     display: none;
   }
 
   .thumbnails-image {
     flex: 1 0 auto;
-
-    img {
-      height: 120px;
-    }
 
     + .thumbnails-image {
       margin-left: 1rem;

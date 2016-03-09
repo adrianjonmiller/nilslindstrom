@@ -1,20 +1,18 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="scrollbar block gray" data-behavior="scrollbar">
-		<button type="button" name="button" class="scrollbar-left ion-chevron-left js-left"></button>
-		<ul class="thumbnails unstyle flexbox js-slider">
+	<div class="scrollbar block gray">
+		<ul class="thumbnails unstyle flexbox js-slider" data-behavior="scrollbar">
 			{% for post in related %}
 				<li class="thumbnails-image">
 					<a href="{{post.link}}">
 						{% if post.thumbnail.src %}
-							<img src="{{post.thumbnail.src}}" />
+							<img src="{{post.thumbnail.src('thumbnail')}}" />
 						{% endif %}
 					</a>
 				</li>
 			{% endfor %}
 		</ul>
-		<button type="button" name="button" class="scrollbar-right ion-chevron-right js-right"></button>
 	</div>
 
 	<article class="{{post.post_type}}" id="post-{{post.ID}}">
