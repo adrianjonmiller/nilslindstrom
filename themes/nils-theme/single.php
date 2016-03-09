@@ -25,7 +25,7 @@ $context['comment_form'] = TimberHelper::get_comment_form();
 $context['sidebar_2'] = Timber::get_widgets('sidebar-2');
 $context['video'] = get_the_post_video( $post->ID );
 $context['images'] = $featured_images;
-$context['related'] = Timber::get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 5, 'post__not_in' => array($post->ID) ) );
+$context['related'] = Timber::get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 99, 'post__not_in' => array($post->ID) ) );
 
 // $context['related'] = Timber::get_posts($args);
 
