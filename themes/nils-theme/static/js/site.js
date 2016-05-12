@@ -5,7 +5,8 @@ jQuery( document ).ready( function( $ ) {
       dots: true,
       infinite: true,
       speed: 300,
-      slidesToShow: 1,
+      slidesToShow: 5,
+      slidesToScroll: 4,
       centerMode: true,
       variableWidth: true
     });

@@ -1,0 +1,22 @@
+#footer {
+  padding-top: 5rem;
+
+  .footer-email {
+    &:before {
+      content: "nils" "\0040";
+    }
+
+    &:after {
+      content: "nilslindstrom.com";
+      margin-left: -.3em;
+    }
+  }
+
+  a {
+    color: #6CBE45;
+
+    &:after {
+      display: none;
+    }
+  }
+}
